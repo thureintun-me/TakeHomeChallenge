@@ -21,6 +21,7 @@ import CartModal from './CartModal';
 import AppContext from '../../context/AppContext';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import PaymentSuccess from './PaymentSuccessModal';
+import FastImage from 'react-native-fast-image';
 
 // create a component
 const HomeScreen = () => {
@@ -167,11 +168,16 @@ const HomeScreen = () => {
           </View>
         </Pressable>
 
-        <Image
-          resizeMode={Platform.OS == 'android' ? 'cover' : 'contain'}
+        <FastImage
+          resizeMode={
+            Platform.OS == 'android'
+              ? FastImage.resizeMode.cover
+              : FastImage.resizeMode.contain
+          }
           style={{width: '80%', height: verticalScale(300), borderRadius: 5}}
           source={{
             uri: item.images.small,
+            priority: FastImage.priority.normal,
           }}
         />
         <View

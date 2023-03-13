@@ -12,6 +12,7 @@ import {
 import ReactNativeModal from 'react-native-modal';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import FastImage from 'react-native-fast-image';
 
 // create a component
 const CartModal = ({
@@ -127,11 +128,12 @@ const CartModal = ({
                 marginBottom: 20,
                 marginHorizontal: 40,
               }}>
-              <Image
-                resizeMode="contain"
+              <FastImage
+                resizeMode={FastImage.resizeMode.contain}
                 style={{width: 77, height: 106}}
                 source={{
                   uri: item.images?.large,
+                  priority: FastImage.priority.normal,
                 }}
               />
               <View
