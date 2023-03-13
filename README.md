@@ -13,7 +13,7 @@ password :Admin@me
 
  # To build the app
 
- - For android
+ - For android  
     -cd android && ./gradlew assembleRelease
 
 
