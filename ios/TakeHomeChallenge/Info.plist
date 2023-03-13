@@ -58,6 +58,11 @@
 			<string>fonts/Foundation.ttf</string>
 			<string>fonts/MaterialCommunityIcons.ttf</string>
 			<string>fonts/MaterialIcons.ttf</string>
+			<string>fonts/Poppins-Regular.ttf</string>
+			<string>fonts/Poppins-Bold.ttf</string>
+			<string>fonts/Poppins-Medium.ttf</string>
+			<string>fonts/Poppins-SemiBold.ttf</string>
+
 		</array>
 	</dict>
 </plist>
