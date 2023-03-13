@@ -1,6 +1,14 @@
 //import liraries
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, FlatList, Pressable, Image} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Pressable,
+  Image,
+  Alert,
+} from 'react-native';
 import ReactNativeModal from 'react-native-modal';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -189,6 +197,10 @@ const CartModal = ({
                         }}>
                         <Pressable
                           onPress={() => {
+                            if (item?.set?.total - item.count <= 0) {
+                              Alert.alert('', 'Out of stock!');
+                              return;
+                            }
                             setCart(
                               cartData.map(obj => {
                                 return {

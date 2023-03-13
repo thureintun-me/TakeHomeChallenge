@@ -126,7 +126,6 @@ const HomeScreen = () => {
   };
 
   const renderItem = ({item, index}) => {
-    console.log('COunt ===>', item.count);
     return (
       <View
         key={item.id}
@@ -179,8 +178,12 @@ const HomeScreen = () => {
             // justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Text style={{...styles.title}}>{item.name}</Text>
-          <Text style={{fontSize: 13, marginVertical: 5}}>{item.rarity}</Text>
+          <Text numberOfLines={1} style={{...styles.pokemon}}>
+            {item.name}
+          </Text>
+          <Text style={{...styles.rarity, marginVertical: 2}}>
+            {item.rarity}
+          </Text>
           <View
             style={{
               width: '100%',
@@ -188,10 +191,10 @@ const HomeScreen = () => {
               justifyContent: 'space-between',
               paddingHorizontal: 50,
             }}>
-            <Text style={{fontSize: 13}}>
+            <Text style={{...styles.priceAndCartLeft}}>
               ${item?.cardmarket?.prices?.averageSellPrice}
             </Text>
-            <Text style={{fontSize: 13}}>
+            <Text style={{...styles.priceAndCartLeft}}>
               {item?.set?.total - item.count} left
             </Text>
           </View>
@@ -458,6 +461,21 @@ const styles = EStyleSheet.create({
   selectCard: {
     fontFamily: 'Poppins-Medium',
     fontSize: 20,
+  },
+  rarity: {
+    fontSize: 16,
+    fontFamily: 'Poppins-Regular',
+    color: '#0F6DB0',
+  },
+  pokemon: {
+    fontSize: 25,
+    fontFamily: 'Poppins-Bold',
+    color: '#1D1C1C',
+  },
+  priceAndCartLeft: {
+    fontSize: 20,
+    fontFamily: 'Poppins-Medium',
+    color: '#6A6969',
   },
 });
 
