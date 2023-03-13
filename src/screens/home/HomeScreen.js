@@ -41,10 +41,14 @@ const HomeScreen = () => {
   const [total, setTotal] = useState(0);
   const [totalPrice, setTotalPrice] = useState(0);
 
-  const {loading, setLoading} = useContext(AppContext);
+  const {loading, setLoading, token} = useContext(AppContext);
   const getPokemon = async () => {
+    const config = {
+      headers: {Authorization: `Bearer ${token}`},
+    };
     let response = await axios.get(
       `https://api.pokemontcg.io/v2/cards?page=${pageNumber.current}&pageSize=12`,
+      config,
     );
 
     if (data) {
